@@ -13,6 +13,7 @@ type Payment struct {
 	CustomerID   string         `json:"customer_id"`
 	Status       string         `json:"status"` // pending, succeeded, failed
 	ExternalRef  string         `json:"external_ref"` // webhook or gateway ref
+	Description  string         `json:"description" gorm:"type:varchar(50)"` // webhook or gateway ref
 	CreatedAt    time.Time      `json:"created_at"`
 	UpdatedAt    time.Time      `json:"updated_at"`
 	DeletedAt    gorm.DeletedAt `gorm:"index" json:"-"`
